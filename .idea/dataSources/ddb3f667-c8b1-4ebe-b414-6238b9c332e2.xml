@@ -912,183 +912,151 @@
       <Charset>utf8mb4</Charset>
       <DefaultForCharset>0</DefaultForCharset>
     </collation>
-    <table id="229" parent="2" name="comptable"/>
-    <table id="230" parent="2" name="etat">
+    <table id="229" parent="2" name="etat">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="231" parent="2" name="fichefrais">
+    <table id="230" parent="2" name="fichefrais">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="232" parent="2" name="fraisforfait">
+    <table id="231" parent="2" name="fraisforfait">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="233" parent="2" name="lignefraisforfait">
+    <table id="232" parent="2" name="lignefraisforfait">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="234" parent="2" name="lignefraishorsforfait">
+    <table id="233" parent="2" name="lignefraishorsforfait">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="235" parent="2" name="visiteur">
+    <table id="234" parent="2" name="visiteur">
       <Engine>InnoDB</Engine>
     </table>
-    <column id="236" parent="229" name="id">
-      <Position>1</Position>
-      <DataType>char(4)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="237" parent="229" name="nom">
-      <Position>2</Position>
-      <DataType>char(30)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="238" parent="229" name="prenom">
-      <Position>3</Position>
-      <DataType>char(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="239" parent="229" name="login">
-      <Position>4</Position>
-      <DataType>char(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="240" parent="229" name="mdp">
-      <Position>5</Position>
-      <DataType>char(20)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="241" parent="229" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="242" parent="230" name="id">
+    <column id="235" parent="229" name="id">
       <Position>1</Position>
       <DataType>char(2)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="243" parent="230" name="libelle">
+    <column id="236" parent="229" name="libelle">
       <Position>2</Position>
       <DataType>varchar(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="244" parent="230" name="PRIMARY">
+    <key id="237" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="245" parent="231" name="idvisiteur">
+    <column id="238" parent="230" name="idvisiteur">
       <Position>1</Position>
       <DataType>char(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="246" parent="231" name="mois">
+    <column id="239" parent="230" name="mois">
       <Position>2</Position>
       <DataType>char(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="231" name="nbjustificatifs">
+    <column id="240" parent="230" name="nbjustificatifs">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="248" parent="231" name="montantvalide">
+    <column id="241" parent="230" name="montantvalide">
       <Position>4</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="249" parent="231" name="datemodif">
+    <column id="242" parent="230" name="datemodif">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="250" parent="231" name="idetat">
+    <column id="243" parent="230" name="idetat">
       <Position>6</Position>
       <DataType>char(2)|0s</DataType>
       <DefaultExpression>&apos;CR&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="251" parent="231" name="idetat">
+    <index id="244" parent="230" name="idetat">
       <ColNames>idetat</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="252" parent="231" name="PRIMARY">
+    <key id="245" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idvisiteur
 mois</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="253" parent="231" name="fichefrais_ibfk_2">
+    <foreign-key id="246" parent="230" name="fichefrais_ibfk_2">
       <ColNames>idvisiteur</ColNames>
       <RefSchemaName>gsb_frais</RefSchemaName>
       <RefTableName>visiteur</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="254" parent="231" name="fichefrais_ibfk_1">
+    <foreign-key id="247" parent="230" name="fichefrais_ibfk_1">
       <ColNames>idetat</ColNames>
       <RefSchemaName>gsb_frais</RefSchemaName>
       <RefTableName>etat</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="255" parent="232" name="id">
+    <column id="248" parent="231" name="id">
       <Position>1</Position>
       <DataType>char(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="232" name="libelle">
+    <column id="249" parent="231" name="libelle">
       <Position>2</Position>
       <DataType>char(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="232" name="montant">
+    <column id="250" parent="231" name="montant">
       <Position>3</Position>
       <DataType>decimal(5,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="258" parent="232" name="PRIMARY">
+    <key id="251" parent="231" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="259" parent="233" name="idvisiteur">
+    <column id="252" parent="232" name="idvisiteur">
       <Position>1</Position>
       <DataType>char(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="233" name="mois">
+    <column id="253" parent="232" name="mois">
       <Position>2</Position>
       <DataType>char(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="261" parent="233" name="idfraisforfait">
+    <column id="254" parent="232" name="idfraisforfait">
       <Position>3</Position>
       <DataType>char(3)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="262" parent="233" name="quantite">
+    <column id="255" parent="232" name="quantite">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="263" parent="233" name="idfraisforfait">
+    <index id="256" parent="232" name="idfraisforfait">
       <ColNames>idfraisforfait</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="264" parent="233" name="PRIMARY">
+    <key id="257" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>idvisiteur
 mois
 idfraisforfait</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="265" parent="233" name="lignefraisforfait_ibfk_1">
+    <foreign-key id="258" parent="232" name="lignefraisforfait_ibfk_1">
       <ColNames>idvisiteur
 mois</ColNames>
       <RefSchemaName>gsb_frais</RefSchemaName>
@@ -1096,57 +1064,57 @@ mois</ColNames>
       <RefColNames>idvisiteur
 mois</RefColNames>
     </foreign-key>
-    <foreign-key id="266" parent="233" name="lignefraisforfait_ibfk_2">
+    <foreign-key id="259" parent="232" name="lignefraisforfait_ibfk_2">
       <ColNames>idfraisforfait</ColNames>
       <RefSchemaName>gsb_frais</RefSchemaName>
       <RefTableName>fraisforfait</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="267" parent="234" name="id">
+    <column id="260" parent="233" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="268" parent="234" name="idvisiteur">
+    <column id="261" parent="233" name="idvisiteur">
       <Position>2</Position>
       <DataType>char(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="269" parent="234" name="mois">
+    <column id="262" parent="233" name="mois">
       <Position>3</Position>
       <DataType>char(6)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="270" parent="234" name="libelle">
+    <column id="263" parent="233" name="libelle">
       <Position>4</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="271" parent="234" name="date">
+    <column id="264" parent="233" name="date">
       <Position>5</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="272" parent="234" name="montant">
+    <column id="265" parent="233" name="montant">
       <Position>6</Position>
       <DataType>decimal(10,2 digit)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="273" parent="234" name="idvisiteur">
+    <index id="266" parent="233" name="idvisiteur">
       <ColNames>idvisiteur
 mois</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="274" parent="234" name="PRIMARY">
+    <key id="267" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="275" parent="234" name="lignefraishorsforfait_ibfk_1">
+    <foreign-key id="268" parent="233" name="lignefraishorsforfait_ibfk_1">
       <ColNames>idvisiteur
 mois</ColNames>
       <RefSchemaName>gsb_frais</RefSchemaName>
@@ -1154,53 +1122,58 @@ mois</ColNames>
       <RefColNames>idvisiteur
 mois</RefColNames>
     </foreign-key>
-    <column id="276" parent="235" name="id">
+    <column id="269" parent="234" name="id">
       <Position>1</Position>
       <DataType>char(4)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="277" parent="235" name="nom">
+    <column id="270" parent="234" name="nom">
       <Position>2</Position>
       <DataType>char(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="278" parent="235" name="prenom">
+    <column id="271" parent="234" name="prenom">
       <Position>3</Position>
       <DataType>char(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="235" name="login">
+    <column id="272" parent="234" name="login">
       <Position>4</Position>
       <DataType>char(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="280" parent="235" name="mdp">
+    <column id="273" parent="234" name="mdp">
       <Position>5</Position>
       <DataType>char(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="281" parent="235" name="adresse">
+    <column id="274" parent="234" name="adresse">
       <Position>6</Position>
       <DataType>char(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="282" parent="235" name="cp">
+    <column id="275" parent="234" name="cp">
       <Position>7</Position>
       <DataType>char(5)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="283" parent="235" name="ville">
+    <column id="276" parent="234" name="ville">
       <Position>8</Position>
       <DataType>char(30)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="284" parent="235" name="dateembauche">
+    <column id="277" parent="234" name="dateembauche">
       <Position>9</Position>
       <DataType>date|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="285" parent="235" name="PRIMARY">
+    <column id="278" parent="234" name="type">
+      <Position>10</Position>
+      <DataType>tinyint(1)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="279" parent="234" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

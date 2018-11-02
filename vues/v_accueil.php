@@ -16,10 +16,12 @@
 ?>
 <div id="accueil">
     <h2>
-        Gestion des frais<small> - Visiteur : 
-            <?php 
+        Gestion des frais
+        <small> - Visiteur :
+            <?php
             echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']
-            ?></small>
+            ?>
+        </small>
     </h2>
 </div>
 <div class="row">

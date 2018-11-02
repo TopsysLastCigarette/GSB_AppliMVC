@@ -1,0 +1,11 @@
+:root {
+    --main-ui-color: #ff8800;
+    --border-main-ui-color: #eb7d00;
+    --secondary-ui-color: #edd3c2;
+    --border-secondary-ui-color: #ecc0a4;
+    --secondary-text-color: #c67c27;
+}
+
+.header {
+    margin-top: 10px;
+}

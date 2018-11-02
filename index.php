@@ -19,13 +19,20 @@ require_once 'includes/class.pdogsb.inc.php';
 session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
-require 'vues/v_entete.php';
+
+if (isset($_SESSION['type']) && $_SESSION['type']==='0') {
+    include_once 'vues/v_enteteComptable.php';
+} else {
+    include_once 'vues/v_entete.php';
+}
+
 $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_STRING);
 if ($uc && !$estConnecte) {
     $uc = 'connexion';
 } elseif (empty($uc)) {
     $uc = 'accueil';
 }
+
 switch ($uc) {
 case 'connexion':
     include 'controleurs/c_connexion.php';
@@ -38,6 +45,12 @@ case 'gererFrais':
     break;
 case 'etatFrais':
     include 'controleurs/c_etatFrais.php';
+    break;
+case 'validationFrais':
+    include 'controleurs/c_validerFrais.php';
+    break;
+case 'suivrePaiement':
+    include 'controleurs/c_suivrePaiement.php';
     break;
 case 'deconnexion':
     include 'controleurs/c_deconnexion.php';

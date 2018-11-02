@@ -1,7 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: monst
- * Date: 02/11/2018
- * Time: 12:02
+ * Validation des frais
+ *
+ * PHP version 7
+ *
+ * @category  PPE
+ * @package   GSB
+ * @author    Joël Deligne <monsters.freaks@gmail.com>
+ * @version   GIT: <0>
+ * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */

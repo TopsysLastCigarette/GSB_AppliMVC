@@ -15,7 +15,14 @@
  */
 
 if ($estConnecte) {
-    include 'vues/v_accueil.php';
+    switch($_SESSION['type']){
+    case '1':
+        include 'vues/v_accueil.php';
+        break;
+    case '0':
+        include 'vues/v_accueilComptable.php';
+        break;
+    }
 } else {
     include 'vues/v_connexion.php';
 }
