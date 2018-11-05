@@ -9,3 +9,23 @@
 .header {
     margin-top: 10px;
 }
+
+.selection-visiteur{
+    margin: 20px;
+}
+
+.selection-visiteur form, .form-comptable{
+    display: inline;
+    margin: 15px;
+}
+
+#lblVisiteurs, #lblMois, #lstVisiteurs, #lstMois{
+    display: inline;
+    vertical-align: middle;
+    padding: 5px;
+}
+
+#lstVisiteurs, #lstMois{
+    max-width: 200px;
+}
+

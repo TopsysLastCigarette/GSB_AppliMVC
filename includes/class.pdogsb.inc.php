@@ -486,4 +486,55 @@ class PdoGsb
         $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
         $requetePrepare->execute();
     }
+
+    /**
+     * Retourne tous les visiteurs présent dans la base de données sous forme de tableau
+     * associatif.
+     *
+     * @return Retourne l'id, le nom et le prenom de chacun des visiteurs  de la BDD
+     */
+    public function getVisiteurs()
+    {
+        $requetePrepare = pdoGSB::$monPdo->prepare(
+            'SELECT visiteur.id AS id, visiteur.nom AS nom, visiteur.prenom AS prenom '
+            .'FROM visiteur '
+            .'WHERE visiteur.type = 1'
+        );
+        $requetePrepare->execute();
+        $lesVisiteurs = array();
+        while ($laLigne = $requetePrepare->fetch()) {
+            $id = $laLigne['id'];
+            $nom = $laLigne['nom'];
+            $prenom = $laLigne['prenom'];
+            $lesVisiteurs[] = array(
+                'id' => $id,
+                'nom' => $nom,
+                'prenom' => $prenom
+            );
+        }
+        return $lesVisiteurs;
+    }
+
+    /**
+     * Fonction permettant de récuperer le nom et le prenom d'un visiteur en passant
+     * son id en paramètre
+     *
+     * @param String $idVisiteur ID du visiteur
+     * @return Retourne le prenom et le nom du visiteur dans un tableau associatif
+     */
+    public function getNomVisiteur ($idVisiteur) {
+        $requetePrepare = pdoGSB::$monPdo->prepare(
+            'SELECT visiteur.nom AS nom, visiteur.prenom AS prenom '
+            .'FROM visiteur '
+            .'WHERE visiteur.id = :unIdVisiteur'
+        );
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetch();
+        $infoVisiteur = array(
+            'nom'=>$laLigne['nom'],
+            'prenom'=>$laLigne['prenom']
+        );
+        return $infoVisiteur;
+    }
 }
