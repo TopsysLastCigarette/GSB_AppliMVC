@@ -519,10 +519,11 @@ class PdoGsb
      * Fonction permettant de récuperer le nom et le prenom d'un visiteur en passant
      * son id en paramètre
      *
-     * @param String $idVisiteur ID du visiteur
-     * @return Retourne le prenom et le nom du visiteur dans un tableau associatif
+     * @param  String $idVisiteur ID du visiteur
+     * @return  Retourne le prenom et le nom du visiteur dans un tableau associatif
      */
-    public function getNomVisiteur ($idVisiteur) {
+    public function getNomVisiteur($idVisiteur)
+    {
         $requetePrepare = pdoGSB::$monPdo->prepare(
             'SELECT visiteur.nom AS nom, visiteur.prenom AS prenom '
             .'FROM visiteur '
@@ -536,5 +537,25 @@ class PdoGsb
             'prenom'=>$laLigne['prenom']
         );
         return $infoVisiteur;
+    }
+
+    /**
+     * Fonction permettant de connaitre le type de l'utilisateur
+     * en passant son id en paramètre
+     *
+     * @param  String $idUtilisateur ID de l'utilisateur
+     * @return  Retourne vrai si l'utilisateur est de type comptable
+     */
+    public function estComptable($idUtilisateur)
+    {
+        $requetePrepare = pdoGSB::$monPdo->prepare(
+            'SELECT visiteur.type '
+            .'FROM visiteur '
+            .'WHERE visiteur.id =:unUtilisateur'
+        );
+        $requetePrepare->bindParam(':unUtilisateur', $idUtilisateur, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetch();
+        return $laLigne['type'] == '0';
     }
 }

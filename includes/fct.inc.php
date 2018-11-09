@@ -249,3 +249,32 @@ function nbErreurs()
         return count($_REQUEST['erreurs']);
     }
 }
+
+/**
+ * Ajoute le libellé d'une mise à jour au tableau des mises à jour
+ *
+ * @param String msg Libellé de mise à jour
+ *
+ * @return null
+ */
+function ajouterMajFrais($msg)
+{
+    if (!isset($_REQUEST['infoMaj'])) {
+        $_REQUEST['infoMaj'] = array();
+    }
+    $_REQUEST['infoMaj'][] = $msg;
+}
+
+/**
+ * Retourne le nombre de lignes du tableau de mises à jour
+ *
+ * @return Integer le nombre de mises à jour
+ */
+function nbMajs()
+{
+    if (!isset($_REQUEST['infoMaj'])) {
+        return 0;
+    } else {
+        return count($_REQUEST['infMaj']);
+    }
+}

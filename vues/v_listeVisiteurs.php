@@ -40,12 +40,12 @@
             </select>
         </div>
     </form>
-    <form action="index.php?uc=validationFrais&action=voirEtatFrais&visiteur=<?php echo $idVisiteur ?>"
+    <form action="index.php?uc=validationFrais&action=voirEtatFrais"
           method="post" role="form">
         <div class="form-comptable">
             <label id="lblMois" for="lstMois" accesskey="n">Mois :</label>
-            <select id="lstMois" name="lstMois" class="form-control"
-                    onchange="if(this.value != 0) { this.form.submit(); }">
+            <input id="visiteur" name="lstVisiteurs" value="<?php echo $idVisiteur ?>" type="hidden">
+            <select id="lstMois" name="lstMois" class="form-control">
                 <?php
                 foreach ($lesMois as $unMois) {
                     $mois = $unMois['mois'];
@@ -64,6 +64,8 @@
                     }
                 }
                 ?>
+                <input id="ok" type="submit" value="Valider" class="btn btn-success"
+                       role="button">
             </select>
         </div>
     </form>
