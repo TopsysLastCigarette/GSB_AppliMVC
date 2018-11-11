@@ -544,7 +544,7 @@ class PdoGsb
      * en passant son id en paramètre
      *
      * @param  String $idUtilisateur ID de l'utilisateur
-     * @return  Retourne vrai si l'utilisateur est de type comptable
+     * @return vrai si l'utilisateur est de type comptable
      */
     public function estComptable($idUtilisateur)
     {
@@ -557,5 +557,42 @@ class PdoGsb
         $requetePrepare->execute();
         $laLigne = $requetePrepare->fetch();
         return $laLigne['type'] == '0';
+    }
+
+    /**
+     * Met à jour la table ligneFraisHorsForfait pour un visiteur et
+     * un mois donné en enregistrant les nouveaux montants
+     *
+     * @param String $idVisiteur ID du visiteur
+     * @param String $mois       Mois sous la forme aaaamm
+     * @param Array  $leFrais   tableau associatif de clé id, libelle, date et
+     *                           de valeur la quantité pour ce frais
+     *
+     * @return null
+     */
+    public function majFraisHorsForfait($idVisiteur, $mois, $leFrais)
+    {
+        $idFrais = $leFrais['id'];
+        $libelle = $leFrais['libelle'];
+        $date = dateFrancaisVersAnglais($leFrais['date']);
+        $montant = $leFrais['montant'];
+
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE lignefraishorsforfait '
+            . 'SET lignefraishorsforfait.montant = :unMontant, '
+            . 'lignefraishorsforfait.libelle = :unLibelle, '
+            . 'lignefraishorsforfait.date = :uneDate '
+            . 'WHERE lignefraishorsforfait.idvisiteur = :unIdVisiteur '
+            . 'AND lignefraishorsforfait.mois = :unMois '
+            . 'AND lignefraishorsforfait.id = :idFrais'
+        );
+
+            $requetePrepare->bindParam(':uneDate', $date, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unMontant', $montant, PDO::PARAM_INT);
+            $requetePrepare->bindParam(':unLibelle', $libelle, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
+            $requetePrepare->execute();
     }
 }

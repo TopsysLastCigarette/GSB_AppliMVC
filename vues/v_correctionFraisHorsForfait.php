@@ -14,44 +14,54 @@
 <hr>
 <div class="row">
     <div class="panel panel-info">
-        <div class="panel-heading">Descriptif des éléments hors forfait</div>
-        <table class="table table-bordered table-responsive">
-            <thead>
-            <tr>
-                <th class="date">Date</th>
-                <th class="libelle">Libellé</th>
-                <th class="montant">Montant</th>
-                <th class="action">&nbsp;</th>
-            </tr>
-            </thead>
-            <tbody>
-            <?php
-            foreach ($lesFraisHorsForfait as $unFraisHorsForfait) {
-                $libelle = htmlspecialchars($unFraisHorsForfait['libelle']);
-                $date = $unFraisHorsForfait['date'];
-                $montant = $unFraisHorsForfait['montant'];
-                $id = $unFraisHorsForfait['id']; ?>
+            <div class="panel-heading">Descriptif des éléments hors forfait</div>
+            <table class="table table-bordered table-responsive">
+                <thead>
                 <tr>
-                    <td><input type="text" id="date"
-                        name="leFrais[<?php echo $date ?>]"
-                        value="<?php echo $date ?>" size="12"></td>
-                    <td><input type="text" id="libelle"
-                               name="leFrais[<?php echo $libelle ?>]"
-                               value="<?php echo $libelle ?>" size="30"></td>
-                    <td><input type="text" id="montant"
-                               name="leFrais[<?php echo $montant ?>]"
-                               value="<?php echo $montant ?>"></td>
-                    <td><a href="index.php?uc=gererFrais&action=supprimerFrais&idFrais=<?php echo $id ?>"
-                           onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">Supprimer ce frais</a>
-                        <button class="btn btn-success" type="submit">Corriger</button>
-                        <button class="btn btn-danger" type="reset">Réinitialiser</button>
-                    </td>
+                    <th class="date">Date</th>
+                    <th class="libelle">Libellé</th>
+                    <th class="montant">Montant</th>
+                    <th class="action">&nbsp;</th>
                 </tr>
+                </thead>
                 <?php
-            }
-            ?>
+                foreach ($lesFraisHorsForfait as $unFraisHorsForfait) {
+                    $libelle = htmlspecialchars($unFraisHorsForfait['libelle']);
+                    $date = $unFraisHorsForfait['date'];
+                    $montant = $unFraisHorsForfait['montant'];
+                    $id = $unFraisHorsForfait['id']; ?>
+                    <form method="post"
+                      action="index.php?uc=validationFrais&action=voirEtatFrais&maj=correctionFraisHorsForfait"
+                      role="form">
+                        <tr>
+                            <td><input type="text" id="date"
+                                name="leFrais[date]"
+                                value="<?php echo $date ?>" size="12"></td>
+                            <td><input type="text" id="libelle"
+                                       name="leFrais[libelle]"
+                                       value="<?php echo $libelle ?>" size="30"></td>
+                            <td><input type="text" id="montant"
+                                       name="leFrais[montant]"
+                                       value="<?php echo $montant ?>"></td>
+                            <input type="hidden" name=leFrais[id] value="<?php echo $id ?>">
+                            <input name="lstVisiteurs" value ="<?php echo $idVisiteur ?>" type="hidden">
+                            <input name="lstMois" value ="<?php echo $leMois ?>" type="hidden">
+                            <td><button class="btn btn-danger" type="submit" name="actionButton" value="supprimer"
+                                        onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">
+                                    Supprimer
+                                </button>
+                                <button class="btn btn-success" type="submit" name="actionButton" value="corriger">
+                                        Corriger
+                                </button>
+                                <button type="reset" class="btn btn-danger">Réinitialiser</button>
+                            </td>
+                        </tr>
+                    </form>
+                    <?php
+                }
+                ?>
 
-            </tbody>
-        </table>
+                </tbody>
+            </table>
     </div>
 </div>
