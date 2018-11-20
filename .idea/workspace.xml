@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64391ef4-c1c7-44c0-84c9-8ad97b054b29" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/vues/v_absenceFiche.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controleurs/c_validerFrais.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/c_validerFrais.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class.pdogsb.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class.pdogsb.inc.php" afterDir="false" />
@@ -78,14 +79,7 @@
         <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="lignefraishorsforfait: table" type="98d5ac3d:MysqlImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="visiteur: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="fichefrais: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -94,31 +88,32 @@
     <session id="-1418424797">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="17" />
+          <entry key="project.closed" value="19" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.8" value="8" />
-          <entry key="project.open.time.9" value="6" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.open.time.9" value="8" />
+          <entry key="project.opened" value="22" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="comptable" value="2" />
           <entry key="css" value="28" />
-          <entry key="etat" value="5" />
-          <entry key="fichefrais" value="4" />
+          <entry key="etat" value="6" />
+          <entry key="fichefrais" value="9" />
           <entry key="fraisforfait" value="3" />
+          <entry key="idetat" value="1" />
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="lignefraisforfait" value="5" />
-          <entry key="lignefraishorsforfait" value="6" />
+          <entry key="lignefraisforfait" value="6" />
+          <entry key="lignefraishorsforfait" value="9" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="348" />
+          <entry key="php" value="388" />
           <entry key="sql" value="5" />
           <entry key="svg" value="1" />
           <entry key="t" value="1" />
@@ -128,13 +123,13 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="28" />
-          <entry key="Database Element" value="34" />
+          <entry key="Database Element" value="44" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="348" />
+          <entry key="PHP" value="388" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="SQL" value="1" />
+          <entry key="SQL" value="2" />
           <entry key="SVG" value="1" />
           <entry key="Scratch" value="4" />
         </counts>
@@ -143,7 +138,7 @@
         <counts>
           <entry key="css" value="1240" />
           <entry key="js" value="171" />
-          <entry key="php" value="16700" />
+          <entry key="php" value="19383" />
           <entry key="sql" value="489" />
           <entry key="txt" value="18" />
         </counts>
@@ -152,7 +147,7 @@
         <counts>
           <entry key="CSS" value="1240" />
           <entry key="JavaScript" value="171" />
-          <entry key="PHP" value="16700" />
+          <entry key="PHP" value="19383" />
           <entry key="PLAIN_TEXT" value="18" />
           <entry key="Scratch" value="489" />
         </counts>
@@ -164,7 +159,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
+            <state relative-caret-position="254">
               <caret line="58" selection-start-line="58" selection-end-line="58" />
             </state>
           </provider>
@@ -173,8 +168,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controleurs/c_validerFrais.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+            <state relative-caret-position="107">
+              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
             </state>
           </provider>
         </entry>
@@ -182,17 +186,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="80" selection-start-line="80" selection-end-line="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="192">
+              <caret line="265" selection-start-line="265" selection-end-line="265" />
             </state>
           </provider>
         </entry>
@@ -209,10 +204,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>#d9edf7</find>
-      <find>#bce8f1</find>
-      <find>#31708f</find>
-      <find>visiteur</find>
       <find>getLesMois</find>
       <find>$lesMois</find>
       <find>getlesMoi</find>
@@ -239,6 +230,10 @@
       <find>justifi</find>
       <find>estTab</find>
       <find>fraisHors</find>
+      <find>estPrem</find>
+      <find>majFrais</find>
+      <find>sup</find>
+      <find>fiche</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -264,16 +259,17 @@
         <option value="$PROJECT_DIR$/controleurs/c_gererFrais.php" />
         <option value="$PROJECT_DIR$/controleurs/c_corrigerFrais.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/vues/v_listeVisiteurs.php" />
         <option value="$PROJECT_DIR$/vues/v_correctionFraisForfait.php" />
         <option value="$PROJECT_DIR$/vues/v_erreurs.php" />
         <option value="$PROJECT_DIR$/vues/v_nbJustificatifs.php" />
         <option value="$PROJECT_DIR$/vues/v_maj.php" />
-        <option value="$PROJECT_DIR$/includes/fct.inc.php" />
         <option value="$PROJECT_DIR$/vues/v_accueilComptable.php" />
         <option value="$PROJECT_DIR$/vues/v_enteteComptable.php" />
-        <option value="$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php" />
+        <option value="$PROJECT_DIR$/vues/v_absenceFiche.php" />
+        <option value="$PROJECT_DIR$/vues/v_listeVisiteurs.php" />
         <option value="$PROJECT_DIR$/includes/class.pdogsb.inc.php" />
+        <option value="$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php" />
+        <option value="$PROJECT_DIR$/includes/fct.inc.php" />
         <option value="$PROJECT_DIR$/controleurs/c_validerFrais.php" />
       </list>
     </option>
@@ -325,7 +321,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -334,7 +330,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -361,12 +356,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="database.console.LAST_STATE" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
@@ -411,12 +407,14 @@
       <workItem from="1541607428772" duration="9262000" />
       <workItem from="1541769161230" duration="11437000" />
       <workItem from="1541862428337" duration="6184000" />
-      <workItem from="1541929705766" duration="11324000" />
+      <workItem from="1541929705766" duration="14484000" />
+      <workItem from="1542634379593" duration="3976000" />
+      <workItem from="1542726951149" duration="10397000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112214000" />
+    <option name="totallyTimeSpent" value="129747000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -428,16 +426,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1932886" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
@@ -451,8 +449,31 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.20201342" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20201342" />
     </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3286119" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.66308725" weight="0.3045326" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.33691275" side_tool="true" weight="0.3045326" />
+      <window_info anchor="bottom" id="Database Console" order="12" weight="0.3286119" />
+      <window_info anchor="bottom" id="PHP-CGI Server" order="13" weight="0.3286119" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20201342" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -465,22 +486,6 @@
       <path value="$PROJECT_DIR$/GSB_AppliMVC" />
     </ignored-roots>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleurs/c_validerFrais.php</url>
-          <line>58</line>
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/controleurs/c_validerFrais.php</url>
-          <line>57</line>
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
@@ -491,15 +496,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/t" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -553,13 +549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/etat">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/ddb3f667-c8b1-4ebe-b414-6238b9c332e2/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -585,13 +574,6 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_listeMois.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="49" column="33" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="49" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -622,38 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_maj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="19" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/c_connexion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="38" column="45" lean-forward="true" selection-start-line="38" selection-start-column="45" selection-end-line="38" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/c_gererFrais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/c_etatFrais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/fichefrais">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -699,38 +653,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/fichefrais/index/idetat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/c_etatFrais.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_listeMois.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="49" column="33" lean-forward="true" selection-start-line="48" selection-start-column="12" selection-end-line="49" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/vues/v_listeVisiteurs.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        <state>
+          <caret column="5" lean-forward="true" selection-start-column="5" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_erreurs.php">
+    <entry file="file://$PROJECT_DIR$/vues/v_absenceFiche.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="17">
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisForfait.php">
+    <entry file="file://$PROJECT_DIR$/controleurs/c_gererFrais.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        <state relative-caret-position="729">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_nbJustificatifs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_pied.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/fichefrais">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -741,20 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="58" selection-start-line="58" selection-end-line="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/lignefraishorsforfait">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -762,24 +716,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisForfait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="586" column="55" lean-forward="true" selection-start-line="586" selection-start-column="55" selection-end-line="586" selection-end-column="55" />
+        <state relative-caret-position="311">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="203">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_nbJustificatifs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_erreurs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_pied.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/etat">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_maj.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/c_validerFrais.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="63" column="39" lean-forward="true" selection-start-line="63" selection-start-column="39" selection-end-line="63" selection-end-column="39" />
+        <state relative-caret-position="107">
+          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
         </state>
       </provider>
     </entry>

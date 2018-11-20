@@ -46,12 +46,16 @@
                             <input type="hidden" name=leFrais[id] value="<?php echo $id ?>">
                             <input name="lstVisiteurs" value ="<?php echo $idVisiteur ?>" type="hidden">
                             <input name="lstMois" value ="<?php echo $leMois ?>" type="hidden">
-                            <td><button class="btn btn-danger" type="submit" name="actionButton" value="supprimer"
+                            <td><button class="btn btn-warning" type="submit" name="actionButton" value="supprimer"
                                         onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">
                                     Supprimer
                                 </button>
                                 <button class="btn btn-success" type="submit" name="actionButton" value="corriger">
                                         Corriger
+                                </button>
+                                <button class="btn btn-info" type="submit" name="actionButton" value="reporter"
+                                        onclick="return confirm('Voulez-vous vraiment reporter ce frais au mois prochain?');">
+                                    Reporter
                                 </button>
                                 <button type="reset" class="btn btn-danger">Réinitialiser</button>
                             </td>
@@ -60,7 +64,6 @@
                     <?php
                 }
                 ?>
-
                 </tbody>
             </table>
     </div>

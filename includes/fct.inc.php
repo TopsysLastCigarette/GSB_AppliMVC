@@ -278,3 +278,29 @@ function nbMajs()
         return count($_REQUEST['infMaj']);
     }
 }
+
+/**
+ * Retourne le mois suivant celui passé en paramètre au format aaaamm
+ *
+ * @param String $unMois le mois au format aaaamm
+ *
+ * @return String $leMoisSuivant au format aaaamm
+ */
+function moisSuivant ($unMois)
+{
+    $annee = substr($unMois, 0, 4);
+    $mois = substr($unMois, -2);
+
+    if ($mois == 12) {
+        $mois = '01';
+        $annee ++;
+    } else {
+        $mois ++;
+        if (strlen($mois) == 1) {
+            $mois = '0'.$mois;
+        }
+    }
+
+    return $leMoisSuivant = $annee.$mois;
+}
+

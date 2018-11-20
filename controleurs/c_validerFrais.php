@@ -64,22 +64,53 @@ case 'voirEtatFrais':
                     include 'vues/v_maj.php';
                 }
                 break;
+            case 'reporter' :
+                valideInfosFrais($leFrais['date'], $leFrais['libelle'], $leFrais['montant']);
+                if (nbErreurs() > 0) {
+                    include 'vues/v_erreurs.php';
+                } else {
+                    $idFrais = $leFrais['id'];
+                    $laDateFrais = $leFrais['date'];
+                    $leLibelleFrais = $leFrais['libelle'];
+                    $leMontantFrais = $leFrais['montant'];
+                    $leMoisSuivant = moisSuivant($leMois);
+
+                    if ($pdo->estPremierFraisMois($idVisiteur, $leMoisSuivant)) {
+                        $pdo->creeNouvellesLignesFrais($idVisiteur, $leMoisSuivant);
+                    }
+                    $pdo->creeNouveauFraisHorsForfait(
+                        $idVisiteur,
+                        $leMoisSuivant,
+                        $leLibelleFrais,
+                        $laDateFrais,
+                        $leMontantFrais
+                    );
+                    $pdo->supprimerFraisHorsForfait($idFrais);
+                    ajouterMajFrais('Le frais hors forfait a bien été reporté au mois suivant pour '.$nomVisiteur.' '.$prenomVisiteur);
+                    include 'vues/v_maj.php';
+                }
+                break;
             case 'supprimer' :
-                //some Code
+                $pdo->refusFraisHorsForfait($idVisiteur, $leMois, $leFrais);
+                ajouterMajFrais('Le frais hors forfait a bien été refusé pour '.$nomVisiteur.' '.$prenomVisiteur);
+                include 'vues/v_maj.php';
                 break;
             }
             break;
         }
     }
-
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $leMois);
     $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur, $leMois);
     $nbJustificatifs = $pdo->getNbjustificatifs($idVisiteur, $leMois);
-    include 'vues/v_correctionFraisForfait.php';
-    include 'vues/v_correctionFraisHorsForfait.php';
-    include 'vues/v_nbJustificatifs.php';
+    if ($pdo->estPremierFraisMois($idVisiteur, $leMois)) {
+        include 'vues/v_absenceFiche.php';
+    } else {
+        include 'vues/v_correctionFraisForfait.php';
+        include 'vues/v_correctionFraisHorsForfait.php';
+        include 'vues/v_nbJustificatifs.php';
+    }
     break;
-case 'validerFicheVisiteur':
+case 'suivrePaiement':
     //code ici
     break;
 }

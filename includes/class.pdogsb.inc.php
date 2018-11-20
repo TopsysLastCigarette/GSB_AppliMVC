@@ -72,7 +72,7 @@ class PdoGsb
      * Fonction statique qui crée l'unique instance de la classe
      * Appel : $instancePdoGsb = PdoGsb::getPdoGsb();
      *
-     * @return l'unique objet de la classe PdoGsb
+     * @return Object_ l'unique objet de la classe PdoGsb
      */
     public static function getPdoGsb()
     {
@@ -88,7 +88,7 @@ class PdoGsb
      * @param String $login Login du visiteur
      * @param String $mdp   Mot de passe du visiteur
      *
-     * @return l'id, le nom, le prénom et le type sous la forme d'un tableau associatif
+     * @return Array l'id, le nom, le prénom et le type sous la forme d'un tableau associatif
      */
     public function getInfosVisiteur($login, $mdp)
     {
@@ -113,7 +113,7 @@ class PdoGsb
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
      *
-     * @return tous les champs des lignes de frais hors forfait sous la forme
+     * @return Array tous les champs des lignes de frais hors forfait sous la forme
      * d'un tableau associatif
      */
     public function getLesFraisHorsForfait($idVisiteur, $mois)
@@ -140,7 +140,7 @@ class PdoGsb
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
      *
-     * @return le nombre entier de justificatifs
+     * @return Integer le nombre entier de justificatifs
      */
     public function getNbjustificatifs($idVisiteur, $mois)
     {
@@ -163,7 +163,7 @@ class PdoGsb
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
      *
-     * @return l'id, le libelle et la quantité sous la forme d'un tableau
+     * @return Array l'id, le libelle et la quantité sous la forme d'un tableau
      * associatif
      */
     public function getLesFraisForfait($idVisiteur, $mois)
@@ -188,7 +188,7 @@ class PdoGsb
     /**
      * Retourne tous les id de la table FraisForfait
      *
-     * @return un tableau associatif
+     * @return Array un tableau associatif
      */
     public function getLesIdFrais()
     {
@@ -266,7 +266,7 @@ class PdoGsb
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
      *
-     * @return vrai ou faux
+     * @return Boolean vrai ou faux
      */
     public function estPremierFraisMois($idVisiteur, $mois)
     {
@@ -407,7 +407,7 @@ class PdoGsb
      *
      * @param String $idVisiteur ID du visiteur
      *
-     * @return un tableau associatif de clé un mois -aaaamm- et de valeurs
+     * @return Array un tableau associatif de clé un mois -aaaamm- et de valeurs
      *         l'année et le mois correspondant
      */
     public function getLesMoisDisponibles($idVisiteur)
@@ -440,7 +440,7 @@ class PdoGsb
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
      *
-     * @return un tableau avec des champs de jointure entre une fiche de frais
+     * @return Array un tableau avec des champs de jointure entre une fiche de frais
      *         et la ligne d'état
      */
     public function getLesInfosFicheFrais($idVisiteur, $mois)
@@ -491,7 +491,7 @@ class PdoGsb
      * Retourne tous les visiteurs présent dans la base de données sous forme de tableau
      * associatif.
      *
-     * @return Retourne l'id, le nom et le prenom de chacun des visiteurs  de la BDD
+     * @return Array Retourne l'id, le nom et le prenom de chacun des visiteurs  de la BDD
      */
     public function getVisiteurs()
     {
@@ -519,8 +519,9 @@ class PdoGsb
      * Fonction permettant de récuperer le nom et le prenom d'un visiteur en passant
      * son id en paramètre
      *
-     * @param  String $idVisiteur ID du visiteur
-     * @return  Retourne le prenom et le nom du visiteur dans un tableau associatif
+     * @param String $idVisiteur ID du visiteur
+     *
+     * @return Array le prenom et le nom du visiteur dans un tableau associatif
      */
     public function getNomVisiteur($idVisiteur)
     {
@@ -543,8 +544,9 @@ class PdoGsb
      * Fonction permettant de connaitre le type de l'utilisateur
      * en passant son id en paramètre
      *
-     * @param  String $idUtilisateur ID de l'utilisateur
-     * @return vrai si l'utilisateur est de type comptable
+     * @param String $idUtilisateur ID de l'utilisateur
+     *
+     * @return Boolean Vrai si l'utilisateur est de type comptable
      */
     public function estComptable($idUtilisateur)
     {
@@ -565,8 +567,8 @@ class PdoGsb
      *
      * @param String $idVisiteur ID du visiteur
      * @param String $mois       Mois sous la forme aaaamm
-     * @param Array  $leFrais   tableau associatif de clé id, libelle, date et
-     *                           de valeur la quantité pour ce frais
+     * @param Array  $leFrais    tableau associatif de clé id, libelle, date et
+     *                           de valeur de quantité pour ce frais
      *
      * @return null
      */
@@ -594,5 +596,36 @@ class PdoGsb
             $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
             $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
             $requetePrepare->execute();
+    }
+
+    /**
+     * Ajoute le terme "REFUSE" devant le libellé d'un frais hors forfait
+     *
+     * @param String $idVisiteur ID du visiteur
+     * @param String $mois       Mois sous la forme aaamm
+     * @param Array  $leFrais    Tableau associatif de clé id, libelle, date
+     *                           et de valeur de quantité pour ce frais
+     *
+     * @return null
+     */
+    public function refusFraisHorsForfait ($idVisiteur, $mois, $leFrais)
+    {
+        $idFrais = $leFrais['id'];
+        $libelleFrais = $leFrais['libelle'];
+        $nouveauLibelle = 'REFUSE '.$libelleFrais;
+
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE lignefraishorsforfait '
+            .'SET lignefraishorsforfait.libelle = :unLibelle '
+            . 'WHERE lignefraishorsforfait.idvisiteur = :unIdVisiteur '
+            . 'AND lignefraishorsforfait.mois = :unMois '
+            . 'AND lignefraishorsforfait.id = :idFrais'
+        );
+
+        $requetePrepare->bindParam(':unLibelle', $nouveauLibelle, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
+        $requetePrepare->execute();
     }
 }
