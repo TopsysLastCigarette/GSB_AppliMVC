@@ -97,6 +97,13 @@ case 'voirEtatFrais':
                 break;
             }
             break;
+        case 'validationComptable' :
+            $nbJustificatifs = filter_input(INPUT_POST, 'nbJustificatifs', FILTER_SANITIZE_STRING);
+            $pdo->majNbJustificatifs($idVisiteur, $leMois, $nbJustificatifs);
+            $pdo->majEtatFicheFrais($idVisiteur, $leMois, 'VA');
+            ajouterMajFrais('La fiche de frais a été validée pour '.$nomVisiteur.' '.$prenomVisiteur);
+            include 'vues/v_maj.php';
+            break;
         }
     }
     $lesFraisForfait = $pdo->getLesFraisForfait($idVisiteur, $leMois);
@@ -109,9 +116,6 @@ case 'voirEtatFrais':
         include 'vues/v_correctionFraisHorsForfait.php';
         include 'vues/v_nbJustificatifs.php';
     }
-    break;
-case 'suivrePaiement':
-    //code ici
     break;
 }
 
