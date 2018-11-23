@@ -610,22 +610,25 @@ class PdoGsb
      */
     public function refusFraisHorsForfait($idVisiteur, $mois, $leFrais)
     {
-        $idFrais = $leFrais['id'];
         $libelleFrais = $leFrais['libelle'];
-        $nouveauLibelle = 'REFUSE '.$libelleFrais;
+        //Vérification qu'un frais n'est pas déjà refusé
+        if (substr($libelleFrais, 0, 6)!='REFUSE') {
+            $idFrais = $leFrais['id'];
+            $nouveauLibelle = 'REFUSE '.$libelleFrais;
 
-        $requetePrepare = PdoGSB::$monPdo->prepare(
-            'UPDATE lignefraishorsforfait '
-            .'SET lignefraishorsforfait.libelle = :unLibelle '
-            . 'WHERE lignefraishorsforfait.idvisiteur = :unIdVisiteur '
-            . 'AND lignefraishorsforfait.mois = :unMois '
-            . 'AND lignefraishorsforfait.id = :idFrais'
-        );
+            $requetePrepare = PdoGSB::$monPdo->prepare(
+                'UPDATE lignefraishorsforfait '
+                .'SET lignefraishorsforfait.libelle = :unLibelle '
+                . 'WHERE lignefraishorsforfait.idvisiteur = :unIdVisiteur '
+                . 'AND lignefraishorsforfait.mois = :unMois '
+                . 'AND lignefraishorsforfait.id = :idFrais'
+            );
 
-        $requetePrepare->bindParam(':unLibelle', $nouveauLibelle, PDO::PARAM_STR);
-        $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
-        $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
-        $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
-        $requetePrepare->execute();
+            $requetePrepare->bindParam(':unLibelle', $nouveauLibelle, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unIdVisiteur', $idVisiteur, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
+            $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
+            $requetePrepare->execute();
+        }
     }
 }

@@ -17,7 +17,7 @@ if (!isset($nbJustificatifs)) {
 ?>
 <div class="col-md-4">
     <form method="post"
-          action="index.php?uc=validationFrais&action=voirEtatFrais&maj=validationComptable"
+          action="index.php?uc=validationFrais&action=validationComptable"
           role="form">
         <label>Nombres de justificatifs :</label>
         <input name="nbJustificatifs" value="<?php echo $nbJustificatifs ?>"

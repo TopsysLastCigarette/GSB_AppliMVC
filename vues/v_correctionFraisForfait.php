@@ -18,7 +18,7 @@
     <h3>Eléments forfaitisés</h3>
     <div class="col-md-4">
         <form method="post"
-              action="index.php?uc=validationFrais&action=voirEtatFrais&maj=correctionFraisForfait"
+              action="index.php?uc=validationFrais&action=correctionFraisForfait"
               role="form">
             <input name="lstVisiteurs" value ="<?php echo $idVisiteur ?>" type="hidden">
             <input name="lstMois" value ="<?php echo $leMois ?>" type="hidden">

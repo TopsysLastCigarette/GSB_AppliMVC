@@ -47,13 +47,13 @@
                                 </a>
                             </li>
                             <li <?php if ($uc == 'validationFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=validationFrais&action=selectionVisiteur">
+                                <a href="index.php?uc=validationFrais">
                                     <span class="glyphicon glyphicon-ok"></span>
                                     Valider les fiches de frais
                                 </a>
                             </li>
                             <li <?php if ($uc == 'suivrePaiement') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=suivrePaiement&action=selectionnerMois">
+                                <a href="index.php?uc=suivrePaiement">
                                     <span class="glyphicon glyphicon-euro"></span>
                                     Suivre le paiement des fiches de frais
                                 </a>

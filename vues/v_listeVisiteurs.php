@@ -13,7 +13,7 @@
 ?>
 
 <div class="selection-visiteur">
-    <form action="index.php?uc=validationFrais&action=selectionVisiteur"
+    <form action="index.php?uc=validationFrais"
           method="post" role="form">
         <div class="form-comptable">
             <label id="lblVisiteurs" for="lstVisiteurs" accesskey="n">Choisir le visiteur:</label>
@@ -40,7 +40,7 @@
             </select>
         </div>
     </form>
-    <form action="index.php?uc=validationFrais&action=voirEtatFrais"
+    <form action="index.php?uc=validationFrais&action=0"
           method="post" role="form">
         <div class="form-comptable">
             <label id="lblMois" for="lstMois" accesskey="n">Mois :</label>

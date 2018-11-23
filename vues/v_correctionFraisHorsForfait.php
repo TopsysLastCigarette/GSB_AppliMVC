@@ -31,7 +31,7 @@
                     $montant = $unFraisHorsForfait['montant'];
                     $id = $unFraisHorsForfait['id']; ?>
                     <form method="post"
-                      action="index.php?uc=validationFrais&action=voirEtatFrais&maj=correctionFraisHorsForfait"
+                      action="index.php?uc=validationFrais&action=correctionFraisHorsForfait"
                       role="form">
                         <tr>
                             <td><input type="text" id="date"
