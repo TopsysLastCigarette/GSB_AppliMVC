@@ -304,3 +304,15 @@ function moisSuivant ($unMois)
     return $leMoisSuivant = $annee.$mois;
 }
 
+/**
+ * Retourne vrai si le frais hors forfait passé en paramètre est un frais qui a été refusé par un comptable
+ *
+ * @param Array $unFraisHorsForfait un tableau associatif correspondant à un frais hors forfait
+ *
+ * @return Bool vrai si le libelle du frais commence par 'REFUSE'
+ */
+function estRefuse($unFraisHorsForfait)
+{
+    return substr($unFraisHorsForfait['libelle'], 0, 6) === 'REFUSE';
+}
+

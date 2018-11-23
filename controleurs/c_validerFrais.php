@@ -97,6 +97,7 @@ case 'validationComptable' :
     $nbJustificatifs = filter_input(INPUT_POST, 'nbJustificatifs', FILTER_SANITIZE_STRING);
     $pdo->majNbJustificatifs($idVisiteur, $leMois, $nbJustificatifs);
     $pdo->majEtatFicheFrais($idVisiteur, $leMois, 'VA');
+    $pdo->majMontantValide($idVisiteur, $leMois);
     ajouterMajFrais('La fiche de frais a été validée pour '.$nomVisiteur.' '.$prenomVisiteur);
     include 'vues/v_maj.php';
     break;

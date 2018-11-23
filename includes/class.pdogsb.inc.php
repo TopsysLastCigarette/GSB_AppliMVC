@@ -610,10 +610,10 @@ class PdoGsb
      */
     public function refusFraisHorsForfait($idVisiteur, $mois, $leFrais)
     {
-        $libelleFrais = $leFrais['libelle'];
         //Vérification qu'un frais n'est pas déjà refusé
-        if (substr($libelleFrais, 0, 6)!='REFUSE') {
+        if (!estRefuse($leFrais)) {
             $idFrais = $leFrais['id'];
+            $libelleFrais = $leFrais['libelle'];
             $nouveauLibelle = 'REFUSE '.$libelleFrais;
 
             $requetePrepare = PdoGSB::$monPdo->prepare(
@@ -630,5 +630,67 @@ class PdoGsb
             $requetePrepare->bindParam(':idFrais', $idFrais, PDO::PARAM_STR);
             $requetePrepare->execute();
         }
+    }
+
+    /**
+     * Calcul la somme du montant validé par le comptable et le met à jour dans la fiche de frais
+     * Discrimine le montant refusé et ne l'incorpore pas dans le total
+     *
+     * @param String $idVisiteur Id du visiteur
+     * @param String $mois       Mois sous la forme aaamm
+     *
+     * @return null
+     */
+    public function majMontantValide($idVisiteur, $mois)
+    {
+        $lesTaux = $this->getLesTaux();
+        $lesFraisForfait = $this->getLesFraisForfait($idVisiteur, $mois);
+        $lesFraisHorsForfait = $this->getLesFraisHorsForfait($idVisiteur, $mois);
+        $totalFraisHorsForfait = 0;
+        $totalFraisForfait = 0;
+        //calcul du montant des frais forfaitisé
+        foreach ($lesFraisForfait as $leFrais) {
+            $totalFraisForfait += $leFrais['quantite']*$lesTaux[$leFrais['idfrais']];
+        }
+        //calcul du montant des frais hors forfait en discriminant le frais refusé
+        foreach ($lesFraisHorsForfait as $leFraisHF) {
+            if (!estRefuse($leFraisHF)) {
+                $totalFraisHorsForfait += $leFraisHF['montant'];
+            }
+        }
+        $totalMontant = $totalFraisForfait + $totalFraisHorsForfait;
+
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'UPDATE fichefrais '
+            .'SET fichefrais.montantvalide =:leTotal '
+            .'WHERE fichefrais.idvisiteur =:leVisiteur '
+            .'AND fichefrais.mois =:leMois'
+        );
+        $requetePrepare->bindParam(':leTotal', $totalMontant, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':leVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->bindParam(':leMois', $mois, PDO::PARAM_STR);
+        $requetePrepare->execute();
+    }
+
+    /**
+     * Retourne les taux des frais forfaitisés sous la forme d'un tableau Associatif
+     *
+     * @return Array $lesTaux Tableau associatif de clé et les taux unitaire
+     */
+    public function getLesTaux()
+    {
+        $requetePrepare = PdoGSB::$monPdo->prepare(
+            'SELECT fraisforfait.id, fraisforfait.montant '
+            .'FROM fraisforfait '
+        );
+        $requetePrepare->execute();
+        $lesLignes = $requetePrepare->fetchAll();
+        $lesTaux = array();
+        foreach ($lesLignes as $laLigne) {
+            $lesTaux += [
+                $laLigne['id']=>$laLigne['montant']
+            ];
+        }
+        return $lesTaux;
     }
 }
