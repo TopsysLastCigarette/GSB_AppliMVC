@@ -17,7 +17,7 @@
 /**
  * Teste si un quelconque visiteur est connecté
  *
- * @return vrai ou faux
+ * @return Boolean vrai ou faux
  */
 function estConnecte()
 {
@@ -30,7 +30,7 @@ function estConnecte()
  * @param String $idVisiteur ID du visiteur
  * @param String $nom        Nom du visiteur
  * @param String $prenom     Prénom du visiteur
- * @param int $type          Type d'utilisateur
+ * @param int    $type       Type d'utilisateur
  *
  * @return null
  */
@@ -253,7 +253,7 @@ function nbErreurs()
 /**
  * Ajoute le libellé d'une mise à jour au tableau des mises à jour
  *
- * @param String msg Libellé de mise à jour
+ * @param String $msg Libellé de mise à jour
  *
  * @return null
  */
