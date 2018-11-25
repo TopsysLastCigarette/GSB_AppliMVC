@@ -93,15 +93,20 @@ class PdoGsb
     public function getInfosVisiteur($login, $mdp)
     {
         $requetePrepare = PdoGsb::$_monPdo->prepare(
-            'SELECT visiteur.id AS id, visiteur.nom AS nom, '
-            . 'visiteur.prenom AS prenom, visiteur.type AS type '
+            'SELECT visiteur.id AS id, visiteur.mdp AS mdp, '
+            .' visiteur.nom AS nom, visiteur.prenom AS prenom, visiteur.type AS type '
             . 'FROM visiteur '
-            . 'WHERE visiteur.login = :unLogin AND visiteur.mdp = :unMdp'
+            . 'WHERE visiteur.login = :unLogin'
         );
         $requetePrepare->bindParam(':unLogin', $login, PDO::PARAM_STR);
-        $requetePrepare->bindParam(':unMdp', $mdp, PDO::PARAM_STR);
         $requetePrepare->execute();
-        return $requetePrepare->fetch();
+        $laLigne = $requetePrepare->fetch();
+        if (password_verify($mdp, $laLigne['mdp'])) {
+            //Suppression du mdp du tableau avant de le retourner
+            return array_diff($laLigne, [$laLigne['mdp']]);
+        } else {
+            return $laLigne= null;
+        }
     }
 
     /**

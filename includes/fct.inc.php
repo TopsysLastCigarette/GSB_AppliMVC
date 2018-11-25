@@ -315,4 +315,3 @@ function estRefuse($unFraisHorsForfait)
 {
     return substr($unFraisHorsForfait['libelle'], 0, 6) === 'REFUSE';
 }
-
