@@ -241,9 +241,9 @@ class PdoGsb
      * Met à jour le nombre de justificatifs de la table ficheFrais
      * pour le mois et le visiteur concerné
      *
-     * @param String  $idVisiteur      ID du visiteur
-     * @param String  $mois            Mois sous la forme aaaamm
-     * @param Integer $nbJustificatifs Nombre de justificatifs
+     * @param String $idVisiteur      ID du visiteur
+     * @param String $mois            Mois sous la forme aaaamm
+     * @param Int    $nbJustificatifs Nombre de justificatifs
      *
      * @return null
      */
@@ -295,7 +295,7 @@ class PdoGsb
      *
      * @param String $idVisiteur ID du visiteur
      *
-     * @return le mois sous la forme aaaamm
+     * @return String le mois sous la forme aaaamm
      */
     public function dernierMoisSaisi($idVisiteur)
     {
@@ -648,7 +648,7 @@ class PdoGsb
      */
     public function majMontantValide($idVisiteur, $mois)
     {
-        $lesTaux = $this->getLesTaux();
+        $lesTaux = $this->getLesTaux($idVisiteur);
         $lesFraisForfait = $this->getLesFraisForfait($idVisiteur, $mois);
         $lesFraisHorsForfait = $this->getLesFraisHorsForfait($idVisiteur, $mois);
         $totalFraisHorsForfait = 0;
@@ -679,10 +679,13 @@ class PdoGsb
 
     /**
      * Retourne les taux des frais forfaitisés sous la forme d'un tableau Associatif
+     * Cette méthode peut prendre en compte la puissance du véhicule du visiteur passé en paramètre
+     *
+     * @param String $idVisiteur (Optionnel) ID du visiteur
      *
      * @return Array $lesTaux Tableau associatif de clé et les taux unitaire
      */
-    public function getLesTaux()
+    public function getLesTaux($idVisiteur = null)
     {
         $requetePrepare = PdoGSB::$_monPdo->prepare(
             'SELECT fraisforfait.id, fraisforfait.montant '
@@ -696,6 +699,12 @@ class PdoGsb
                 $laLigne['id']=>$laLigne['montant']
             ];
         }
+        /*Remplacement de la ligne du taux kilometrique en fonction du véhicule de l'utilisateur
+        si un id visiteur est passé en paramètre*/
+        if (isset($idVisiteur)) {
+            $lesTaux['KM'] = $this->getTauxPuissance($idVisiteur);
+        }
+
         return $lesTaux;
     }
 
@@ -705,6 +714,8 @@ class PdoGsb
      *
      * @param String $idVisiteur ID du visiteur
      * @param String $etat       l'état d'une fiche de frais
+     * @param String $etat2      (Optionnel) l'état d'une fiche de frais
+     * @param String $etat3      (Optionnel) l'état d'une fiche de frais
      *
      * @return Array un tableau associatif de clé un mois -aaaamm- et de valeurs
      *         l'année et le mois correspondant
@@ -744,5 +755,27 @@ class PdoGsb
             );
         }
         return $lesMois;
+    }
+
+    /**
+     * Retourne la puissance du véhicule déclaré par le visiteur au service comptable sous la forme d'un
+     * entier positif.
+     *
+     * @param String $idVisiteur ID du visiteur
+     *
+     * @return Float $tauxPuissance La puissance du véhicule d'un visiteur
+     */
+    public function getTauxPuissance($idVisiteur)
+    {
+        $requetePrepare = PdoGsb::$_monPdo->prepare(
+            'SELECT puissancemoteur.taux '
+            .' FROM puissancemoteur '
+            .' NATURAL JOIN visiteur '
+            .' WHERE visiteur.id = :unVisiteur'
+        );
+        $requetePrepare->bindParam(':unVisiteur', $idVisiteur, PDO::PARAM_STR);
+        $requetePrepare->execute();
+        $laLigne = $requetePrepare->fetch();
+        return $laLigne['taux'];
     }
 }

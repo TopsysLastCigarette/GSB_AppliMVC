@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="64391ef4-c1c7-44c0-84c9-8ad97b054b29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/gendatas/hashBDDPassword.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/ddb3f667-c8b1-4ebe-b414-6238b9c332e2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/ddb3f667-c8b1-4ebe-b414-6238b9c332e2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controleurs/c_connexion.php" beforeDir="false" afterPath="$PROJECT_DIR$/controleurs/c_connexion.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/includes/class.pdogsb.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/class.pdogsb.inc.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/fct.inc.php" beforeDir="false" afterPath="$PROJECT_DIR$/includes/fct.inc.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
     <ignored path="$PROJECT_DIR$/vendor/doctrine/instantiator/" />
@@ -78,6 +76,27 @@
         <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="fraisforfait: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="lignefraisforfait: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="puissancemoteur: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="gsb_frais@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="gsb_frais: schema" type="c314c289:MysqlImplModel$Schema" />
         <item name="visiteur: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
     </expand>
@@ -87,16 +106,16 @@
     <session id="-1418424797">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="22" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.8" value="8" />
-          <entry key="project.open.time.9" value="9" />
-          <entry key="project.opened" value="26" />
+          <entry key="project.open.time.8" value="9" />
+          <entry key="project.open.time.9" value="10" />
+          <entry key="project.opened" value="28" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -105,29 +124,29 @@
           <entry key="css" value="32" />
           <entry key="etat" value="11" />
           <entry key="fichefrais" value="21" />
-          <entry key="fraisforfait" value="6" />
+          <entry key="fraisforfait" value="7" />
           <entry key="idetat" value="1" />
           <entry key="js" value="1" />
           <entry key="json" value="1" />
-          <entry key="lignefraisforfait" value="7" />
+          <entry key="lignefraisforfait" value="8" />
           <entry key="lignefraishorsforfait" value="10" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
-          <entry key="php" value="499" />
+          <entry key="php" value="512" />
           <entry key="sql" value="5" />
           <entry key="svg" value="1" />
           <entry key="t" value="1" />
-          <entry key="visiteur" value="10" />
+          <entry key="visiteur" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="32" />
-          <entry key="Database Element" value="67" />
+          <entry key="Database Element" value="73" />
           <entry key="JSON" value="2" />
           <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
-          <entry key="PHP" value="499" />
+          <entry key="PHP" value="512" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SQL" value="2" />
           <entry key="SVG" value="1" />
@@ -140,7 +159,7 @@
           <entry key="css" value="1343" />
           <entry key="dummy" value="20" />
           <entry key="js" value="171" />
-          <entry key="php" value="30225" />
+          <entry key="php" value="31769" />
           <entry key="sql" value="489" />
           <entry key="txt" value="18" />
         </counts>
@@ -149,7 +168,7 @@
         <counts>
           <entry key="CSS" value="1343" />
           <entry key="JavaScript" value="171" />
-          <entry key="PHP" value="30225" />
+          <entry key="PHP" value="31769" />
           <entry key="PLAIN_TEXT" value="38" />
           <entry key="Scratch" value="525" />
         </counts>
@@ -159,40 +178,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+        <entry file="file://$PROJECT_DIR$/controleurs/c_validerFrais.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="105" column="58" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
-              <folding>
-                <element signature="e#386#988#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controleurs/c_connexion.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="232" selection-start-line="232" selection-end-line="232" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/gendatas/hashBDDPassword.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="139">
+              <caret line="99" selection-start-line="99" selection-end-line="99" />
             </state>
           </provider>
         </entry>
@@ -206,11 +195,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/fraisforfait">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-925">
+              <caret line="702" column="17" selection-start-line="702" selection-start-column="17" selection-end-line="702" selection-end-column="17" />
+              <folding>
+                <element signature="e#386#988#0#PHP" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -227,7 +219,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fraisHors</find>
       <find>estPrem</find>
       <find>majFrais</find>
       <find>sup</find>
@@ -257,6 +248,7 @@
       <find>mot de</find>
       <find>mdp</find>
       <find>getInfos</find>
+      <find>montantVal</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -288,14 +280,14 @@
         <option value="$PROJECT_DIR$/vues/v_enteteComptable.php" />
         <option value="$PROJECT_DIR$/styles/styleComptable.css" />
         <option value="$PROJECT_DIR$/vues/v_nbJustificatifs.php" />
-        <option value="$PROJECT_DIR$/controleurs/c_validerFrais.php" />
         <option value="$PROJECT_DIR$/vues/v_listeVisiteurs.php" />
         <option value="$PROJECT_DIR$/vues/v_gestionPaiement.php" />
         <option value="$PROJECT_DIR$/controleurs/c_suivrePaiement.php" />
         <option value="$PROJECT_DIR$/includes/fct.inc.php" />
         <option value="$PROJECT_DIR$/controleurs/c_connexion.php" />
-        <option value="$PROJECT_DIR$/includes/class.pdogsb.inc.php" />
         <option value="$PROJECT_DIR$/tests/gendatas/hashBDDPassword.php" />
+        <option value="$PROJECT_DIR$/controleurs/c_validerFrais.php" />
+        <option value="$PROJECT_DIR$/includes/class.pdogsb.inc.php" />
       </list>
     </option>
   </component>
@@ -346,7 +338,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
-    <option name="width" value="979" />
+    <option name="width" value="980" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -371,17 +363,6 @@
               <item name="GSB_AppliMVC" type="b2602c69:ProjectViewProjectNode" />
               <item name="GSB_AppliMVC" type="462c0819:PsiDirectoryNode" />
               <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GSB_AppliMVC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GSB_AppliMVC" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GSB_AppliMVC" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GSB_AppliMVC" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
-              <item name="gendatas" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GSB_AppliMVC" type="b2602c69:ProjectViewProjectNode" />
@@ -459,12 +440,14 @@
       <workItem from="1542823668114" duration="710000" />
       <workItem from="1542989213332" duration="16395000" />
       <workItem from="1543142098391" duration="18020000" />
-      <workItem from="1543165420787" duration="11292000" />
+      <workItem from="1543165420787" duration="11601000" />
+      <workItem from="1543401873475" duration="769000" />
+      <workItem from="1543422208363" duration="4575000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180382000" />
+    <option name="totallyTimeSpent" value="186035000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,27 +462,27 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20939597" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2147651" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.34135976" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.33569404" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286119" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.66308725" weight="0.3045326" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.66308725" weight="0.30169973" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.33691275" side_tool="true" weight="0.3045326" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3286119" />
       <window_info anchor="bottom" id="PHP-CGI Server" order="13" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.14966443" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.20067114" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
@@ -535,6 +518,17 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/GSB_AppliMVC" />
     </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/controleurs/c_validerFrais.php</url>
+          <line>99</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
@@ -646,41 +640,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/lignefraisforfait">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_pied.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisForfait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_maj.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_nbJustificatifs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/styles/styleComptable.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -724,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="141">
-          <caret line="47" column="95" lean-forward="true" selection-start-line="46" selection-start-column="28" selection-end-line="47" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/etat">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -752,24 +704,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/c_validerFrais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1093">
-          <caret line="23" column="52" lean-forward="true" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/fichefrais">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_gestionPaiement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
@@ -780,31 +718,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vues/v_etatFrais.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/c_accueil.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controleurs/c_suivrePaiement.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-374">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
@@ -813,27 +730,45 @@
         <state relative-caret-position="-198" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
+    <entry file="file://$PROJECT_DIR$/tests/gendatas/hashBDDPassword.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
+        <state relative-caret-position="782">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controleurs/c_connexion.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="170">
           <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+    <entry file="file://$PROJECT_DIR$/vues/v_etatFrais.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="105" column="58" selection-start-line="105" selection-start-column="58" selection-end-line="105" selection-end-column="58" />
-          <folding>
-            <element signature="e#386#988#0#PHP" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_gestionPaiement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/c_suivrePaiement.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://ddb3f667-c8b1-4ebe-b414-6238b9c332e2/schema/gsb_frais/table/lignefraisforfait">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -851,10 +786,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/gendatas/hashBDDPassword.php">
+    <entry file="file://$PROJECT_DIR$/vues/v_maj.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="153">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisForfait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_nbJustificatifs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_correctionFraisHorsForfait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vues/v_pied.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/fct.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controleurs/c_validerFrais.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="99" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/class.pdogsb.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-925">
+          <caret line="702" column="17" selection-start-line="702" selection-start-column="17" selection-end-line="702" selection-end-column="17" />
+          <folding>
+            <element signature="e#386#988#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
