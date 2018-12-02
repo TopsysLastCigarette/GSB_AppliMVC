@@ -17,7 +17,7 @@
           method="post" role="form">
         <div class="form-comptable">
             <label id="lblVisiteurs" for="lstVisiteurs" accesskey="n">Choisir le visiteur:</label>
-            <select id="lstVisiteurs" name="lstVisiteurs" class="form-control"
+            <select class="select2" id="lstVisiteurs" name="lstVisiteurs"
                     onchange="if(this.value != 0) { this.form.submit(); }">
                 <?php
                 foreach ($lesVisiteurs as $unVisiteur) {

@@ -22,6 +22,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="./styles/bootstrap/bootstrap.css" rel="stylesheet">
         <link href="./styles/styleComptable.css" rel="stylesheet">
+        <link href="vendor/select2/select2/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="vendor/components/jquery/jquery.min.js"></script>
+        <script src="vendor/select2/select2/dist/js/select2.min.js"></script>
+        <script src="scripts/gsbScripts.js"></script>
     </head>
     <body>
         <div class="container">
