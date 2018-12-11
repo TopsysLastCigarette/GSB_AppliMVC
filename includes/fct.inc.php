@@ -315,3 +315,73 @@ function estRefuse($unFraisHorsForfait)
 {
     return substr($unFraisHorsForfait['libelle'], 0, 6) === 'REFUSE';
 }
+
+/**
+ * Retourne la date en lettres, par exemple 02-08-1998 = 2 aout 1998
+ *
+ * @param String $laDate la Date au format jj/mm/aaaa
+ *
+ * @return String $laDateEnLettres la Date en Lettres
+ */
+function laDateEnLettres($laDate)
+{
+    $laDateCoupee = explode("/", $laDate);
+    $Jour = $laDateCoupee[0];
+    $Mois = $laDateCoupee[1];
+    $Annee = $laDateCoupee[2];
+    if (substr($Jour, 0, 1) === '0') {
+        $Jour = substr($Jour, 1, 1);
+    }
+    $Mois = moisEnLettres($Mois);
+    return $laDateEnLettres = $Jour . ' ' . $Mois . ' ' . $Annee;
+}
+
+/**
+ * Retourne un mois en lettres. ex: 02 > Février
+ *
+ * @param String $numMois le mois en chiffre
+ *
+ * @return String $leMois le mois en lettres
+ */
+function moisEnLettres($numMois)
+{
+    switch($numMois){
+    case '01':
+        $leMois = "Janvier";
+        break;
+    case '02':
+        $leMois = "Février";
+        break;
+    case '03':
+        $leMois = "Mars";
+        break;
+    case '04':
+        $leMois = "Avril";
+        break;
+    case '05':
+        $leMois = "Mai";
+        break;
+    case '06':
+        $leMois = "Juin";
+        break;
+    case '07':
+        $leMois = "Juillet";
+        break;
+    case '08':
+        $leMois = "Aout";
+        break;
+    case '09':
+        $leMois = "Septembre";
+        break;
+    case '10':
+        $leMois = "Octobre";
+        break;
+    case '11':
+        $leMois = "Novembre";
+        break;
+    case '12':
+        $leMois = "Décembre";
+        break;
+    }
+    return $leMois;
+}

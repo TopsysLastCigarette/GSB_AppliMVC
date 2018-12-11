@@ -13,13 +13,22 @@
  * @version   GIT: <0>
  * @link      http://www.reseaucerta.org Contexte « Laboratoire GSB »
  */
+use Mpdf\Mpdf;
 
 require_once 'includes/fct.inc.php';
 require_once 'includes/class.pdogsb.inc.php';
-require_once 'includes/fpdf.inc.php';
+
 session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
+
+//Appel du générateur de PDF si un telechargement a été demandé (doit s'appeller avant le HTML)
+if ($estConnecte && isset($_GET['download'])
+    && $_GET['download']==='PDF'
+    && $_SESSION['type']==='0'
+) {
+    include_once 'controleurs/c_download.php';
+}
 
 if (isset($_SESSION['type']) && $_SESSION['type']==='0') {
     include_once 'vues/v_enteteComptable.php';
@@ -48,13 +57,25 @@ case 'etatFrais':
     include 'controleurs/c_etatFrais.php';
     break;
 case 'validationFrais':
-    include 'controleurs/c_validerFrais.php';
+    //Vérification qu'un visiteur connecté ne puisse accéder au controleur du comptable
+    if ($_SESSION['type']==='0') {
+        include 'controleurs/c_validerFrais.php';
+    } else {
+        ajouterErreur('Accès interdit');
+        include 'vues/v_erreurs.php';
+    }
     break;
 case 'suivrePaiement':
-    include 'controleurs/c_suivrePaiement.php';
+    if ($_SESSION['type']==='0') {
+        include 'controleurs/c_suivrePaiement.php';
+    } else {
+        ajouterErreur('Accès interdit');
+        include 'vues/v_erreurs.php';
+    }
     break;
 case 'deconnexion':
     include 'controleurs/c_deconnexion.php';
     break;
 }
+
 require 'vues/v_pied.php';

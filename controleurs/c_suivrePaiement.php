@@ -65,11 +65,10 @@ if (isset($action)) {
         }
         break;
     }
-
     include 'vues/v_etatFrais.php';
     //Affichage des boutons seulement si les frais ne sont pas déjà remboursés
     if ($libEtat != 'Remboursée') {
         include 'vues/v_gestionPaiement.php';
     }
+    include 'vues/v_telechargerPDF.php';
 }
-
