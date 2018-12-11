@@ -23,10 +23,7 @@ $pdo = PdoGsb::getPdoGsb();
 $estConnecte = estConnecte();
 
 //Appel du générateur de PDF si un telechargement a été demandé (doit s'appeller avant le HTML)
-if ($estConnecte && isset($_GET['download'])
-    && $_GET['download']==='PDF'
-    && $_SESSION['type']==='0'
-) {
+if ($estConnecte && isset($_GET['download']) && $_GET['download']==='PDF' && $_SESSION['type']==='0') {
     include_once 'controleurs/c_download.php';
 }
 

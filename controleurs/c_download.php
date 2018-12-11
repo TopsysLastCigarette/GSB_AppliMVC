@@ -100,10 +100,12 @@ if (!file_exists($fichePDF)) {
     //Génération du PDF
     $mpdf->Output('generatedPDF/REMBOURSEMENT_FRAIS_'.$leMois.'-'.$nomVisiteur.'.pdf', \Mpdf\Output\Destination::FILE);
 }
-ob_end_clean();
-
-/*header('Content-Type: application/pdf');
+header('Content-Description: File Transfer');
+header('Content-Type: application/pdf');
 header('Content-Disposition: attachment; filename="'.basename($fichePDF).'"');
-readfile($fichePDF);*/
+header('Expires: 0');
+header('Cache-Control: must-revalidate');
+header('Pragma: public');
+header('Content-Length: ' . filesize($fichePDF));
+readfile($fichePDF);
 
-header('Location: '.$fichePDF);
